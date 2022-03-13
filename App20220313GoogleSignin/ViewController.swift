@@ -10,10 +10,21 @@ import Firebase
 import GoogleSignIn
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var GoogleSigninStatus: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        Auth.auth().addStateDidChangeListener { auth, user in
+            if let user = user {
+                let theEmail = user.email ?? ""
+                print("已登入成功\(theEmail)")
+                self.GoogleSigninStatus.text = "您好,\(theEmail)"
+            } else {
+                print("登出狀態")
+                self.GoogleSigninStatus.text = "您已登出"
+            }
+        }
     }
 
     @IBAction func signinGoogleAction(_ sender: Any) {
@@ -48,5 +59,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func signoutGoogleAction(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        }catch{
+            print(error.localizedDescription)
+        }
+    }
 }
 
