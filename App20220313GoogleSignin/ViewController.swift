@@ -40,7 +40,11 @@ class ViewController: UIViewController {
             let credential = GoogleAuthProvider.credential(withIDToken: idToken,
                                                            accessToken: authentication.accessToken)
 
-            print(credential)
+            Auth.auth().signIn(with: credential) { result, error in
+                if error != nil {
+                    print(error?.localizedDescription ?? "" as Any)
+                }
+            }
         }
     }
     
