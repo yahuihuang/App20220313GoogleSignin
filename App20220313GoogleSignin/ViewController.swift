@@ -25,22 +25,22 @@ class ViewController: UIViewController {
         // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(with: config, presenting: self) { [unowned self] user, error in
 
-          if let error = error {
-            // ...
-            return
-          }
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
 
-          guard
-            let authentication = user?.authentication,
-            let idToken = authentication.idToken
-          else {
-            return
-          }
+            guard
+                let authentication = user?.authentication,
+                let idToken = authentication.idToken
+            else {
+                return
+            }
 
-          let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                         accessToken: authentication.accessToken)
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                           accessToken: authentication.accessToken)
 
-          // ...
+            print(credential)
         }
     }
     
