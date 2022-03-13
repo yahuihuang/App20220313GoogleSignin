@@ -91,7 +91,6 @@
 				D77992E0E393B31A8003669B /* Pods-App20220313GoogleSignin.debug.xcconfig */,
 				DF60F1439FBB833A51F80399 /* Pods-App20220313GoogleSignin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
