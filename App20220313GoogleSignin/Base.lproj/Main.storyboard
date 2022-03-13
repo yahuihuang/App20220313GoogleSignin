@@ -16,17 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5NH-sW-VwU" customClass="GIDSignInButton">
-                                <rect key="frame" x="10" y="80" width="394" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byS-HC-9O2">
+                                <rect key="frame" x="30" y="74" width="354" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Qhm-y6-NvO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SigninGoogle">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="1" green="0.91940291090000004" blue="0.1069808545" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="signinGoogleAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6if-xp-Tcm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5NH-sW-VwU" secondAttribute="trailing" constant="10" id="DD8-5q-5eF"/>
-                            <constraint firstItem="5NH-sW-VwU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Yqy-6y-ZWZ"/>
-                            <constraint firstItem="5NH-sW-VwU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="y4U-xn-6ob"/>
+                            <constraint firstItem="byS-HC-9O2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="9aO-eu-o2x"/>
+                            <constraint firstItem="byS-HC-9O2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="BkF-Av-qyD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="byS-HC-9O2" secondAttribute="trailing" constant="30" id="e0g-Ef-ORG"/>
                         </constraints>
                     </view>
                 </viewController>
